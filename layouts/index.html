@@ -1,0 +1,31 @@
+{{ define "main" }}
+
+{{ .Scratch.Set "lyrics" (slice 
+  "between boredom, boredom and horror - between the kingdom of the living and the dead"
+  "mellan tristess, tristess och skräck - mellan riket av de levande och de döda"
+  "entre l'ennui, l'ennui et l'horreur - entre le royaume des vivants et des morts"
+  "entre el aburrimiento, el aburrimiento y el horror - entre el reino de los vivos y los muertos'"
+  "지루함, 지루함과 공포 사이 - 산 자와 죽은 자들의 왕국 사이")
+}}
+
+<main class="relative h-screen text-center dark:bg-gray-900 dark:text-gray-50">
+    {{ partial "lyricstop.html" . }}
+
+    <div class='absolute z-10 flex flex-col items-center inset-24 justify-evenly'>
+        <div class='w-80 sm:w-96 lg:w-2/3'>
+            <h1 class="text-4xl font-bold lowercase sm:text-6xl lg:text-8xl font-title">
+                cederberg
+            </h1>
+            <h2 class="-mt-2 text-xl uppercase sm:text-3xl lg:text-5xl font-title font-extralight">
+                UNDER CONSTRUCTION
+            </h2>
+            <div class="flex flex-row my-3 text-center justify-evenly">
+                {{ partial "navbar" . }}
+            </div>
+        </div>
+    </div>
+
+    {{ partial "lyricsbottom" . }}
+</main>
+
+{{ end }}

@@ -1,0 +1,31 @@
+{{ define "main" }}
+
+{{ .Scratch.Set "lyrics" (slice 
+  "a generation lost in space, with no time left to start again"
+  "en generation förlorad i rymden, utan tid kvar att börja om"
+  "une génération perdue dans l'espace, sans le temps pour recommencer"
+  "una generación perdida en el espacio, sin tiempo para empezar de nuevo"
+  "다시 일어설 여유 없이 우주 속에서 길 잃은 세대")
+}}
+
+<main class="relative h-screen text-center dark:bg-gray-900 dark:text-gray-50">
+    {{ partial "lyricstop.html" . }}
+
+    <div class='absolute z-10 flex flex-col items-center inset-24 justify-evenly'>
+        <div class='w-80 sm:w-96 lg:w-2/3'>
+            <h1 class="text-4xl font-bold lowercase sm:text-6xl lg:text-8xl font-title">
+                error 404
+            </h1>
+            <h2 class="-mt-2 text-xl uppercase sm:text-3xl lg:text-5xl font-title font-extralight">
+                NOT FOUND
+            </h2>
+            <div class="flex flex-row my-3 text-center justify-evenly">
+                {{ partial "navbar" . }}
+            </div>
+        </div>
+    </div>
+
+    {{ partial "lyricsbottom" . }}
+</main>
+
+{{ end }}

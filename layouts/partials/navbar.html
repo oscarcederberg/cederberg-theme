@@ -1,0 +1,5 @@
+{{ range .Site.Menus.main }}
+    <a href="{{ .URL }}" class="w-20 bg-gray-300 rounded-full dark:bg-gray-600 hover:bg-gray-500 active:bg-gray-700 dark:active:bg-gray-300 focus:bg-gray-400 dark:focus:bg-gray-600 active:text-white dark:active:text-black">
+        {{ .Name }}
+    </a>
+{{ end }}

@@ -1,0 +1,21 @@
+{{ define "main" }}
+
+<main class="relative w-screen h-screen text-center dark:bg-gray-900 dark:text-gray-50">
+    <div class='z-10 flex flex-col items-center mx-16 text-left sm:flex-row'>
+        <div class='flex flex-row items-center mt-6 gap-x-4'>
+            <h1 id="title" class="text-xl font-bold lowercase sm:text-3xl lg:text-5xl font-title">post</h1>
+            <h2 id="subtitle" class="text-xl lowercase sm:text-3xl lg:text-5xl font-title font-extralight">{{ .Title }}</h2>
+        </div>
+        <div class="flex flex-row mt-6 text-center justify-evenly w-80" />
+            {{ partial "navbar.html" . }}
+        </div>
+    </div>
+
+    <Divider text={dividerText} />
+
+    <article id="content" class="mx-16 text-left">
+        {{ .Content }}
+    </article>
+</main>
+
+{{ end }}
