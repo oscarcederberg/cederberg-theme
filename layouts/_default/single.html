@@ -12,19 +12,20 @@
     "it's good to be king. wait, maybe. i think maybe i'm just like a little bizarre little person who walks back and forth. whatever, you know, but... det är bra att vara kung. vänta, kanske. jag tror kanske jag är som en liten bisarr liten person som går fram och tillbaka. ändå, du vet, men... c'est bien d'être roi. attendez, peut-être. je pense que je suis peut-être comme une petite personne bizarre qui va et vient. peu importe, tu sais, mais... es bueno ser rey. espera, quizás. creo qué parezco ser simplemente un extraño pequeño y pequeña persona que camina para atrás y para adelante. aún, tu sabes, pero 왕이 되는 것이 좋습니다. 잠깐, 아마도. 나는 아마도 앞뒤로 걷는 작고 기이 한 작은 사람과 같다고 생각합니다. 뭐, 알겠지만..."
 }}
 
-<main class="relative w-screen h-screen text-center dark:bg-gray-900 dark:text-gray-50">
+<main class="relative w-screen max-h-full min-h-screen text-center dark:bg-gray-900 dark:text-gray-50">
     <div class='z-10 flex flex-col items-center mx-16 text-left sm:flex-row'>
         <div class='flex flex-row items-center mt-6 gap-x-4'>
             <h1 id="title" class="text-xl font-bold lowercase sm:text-3xl lg:text-5xl font-title"> {{ .Title }} </h1>
             <h2 id="subtitle" class="text-xl lowercase sm:text-3xl lg:text-5xl font-title font-extralight"> {{ .Params.subtitle }} </h2>
         </div>
-        <div class="flex flex-row justify-end">
-            <div class="flex flex-row mt-6 text-center justify-evenly w-80"/>
-                {{ partial "navbar" . }}
-            </div>
+        
+        <div class="flex flex-row mt-6 text-center justify-evenly w-80"/>
+            {{ partial "navbar" . }}
         </div>
     </div>
+    
     {{ partial "divider" . }}
+    
     <article id="content" class="mx-16 prose prose-xl text-left prose-slate dark:prose-invert prose-a:text-blue-600 hover:prose-a:text-blue-500">
         {{ .Content }}
     </article>
