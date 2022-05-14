@@ -1,0 +1,10 @@
+<div class='z-10 flex flex-col items-center mx-16 text-left sm:flex-row'>
+    <div class='flex flex-row items-center mt-6 text-xl lowercase gap-x-4 sm:text-3xl lg:text-5xl font-title'>
+        <h1 id="title" class="font-extrabold lowercase"> {{ .Site.Title }} </h1>
+        <h2 id="subtitle" class="lowercase font-extralight"> {{.Title}} </h2>
+    </div>
+    
+    <div class="flex flex-row mt-6 text-center justify-evenly w-80" />
+        {{ partial "navbar" . }}
+    </div>
+</div>

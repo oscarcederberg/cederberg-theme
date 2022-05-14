@@ -13,33 +13,24 @@
 }}
 
 <main class="relative w-screen max-h-full min-h-screen text-center dark:bg-gray-900 dark:text-gray-50">
-    <div class='z-10 flex flex-col items-center mx-16 text-left sm:flex-row'>
-        <div class='flex flex-row items-center mt-6 gap-x-4'>
-            <h1 id="title" class="text-xl font-bold lowercase sm:text-3xl lg:text-5xl font-title"> {{ .Title }} </h1>
-            <h2 id="subtitle" class="text-xl lowercase sm:text-3xl lg:text-5xl font-title font-extralight"> latest </h2>
-        </div>
-        
-        <div class="flex flex-row mt-6 text-center justify-evenly w-80" />
-            {{ partial "navbar" . }}
-        </div>
-    </div>
-    
+    {{ partial "titlebar" . }}
     {{ partial "divider" . }}
 
-    <div class="flex flex-col items-center">
-        <article id="content" class="w-3/4 mx-16 prose prose-xl text-center prose-slate dark:prose-invert prose-a:text-blue-600 hover:prose-a:text-blue-500">
-            {{ .Content }}
-        </article>
-        
-        <div class="grid justify-between w-full grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5 not-prose">
-            {{ range .Pages }}
-                <a href="{{.Permalink}}" class="w-48 h-32 p-8 overflow-hidden text-center truncate bg-gray-300 rounded-lg dark:bg-gray-600 hover:bg-gray-500 active:bg-gray-700 dark:active:bg-gray-300 focus:bg-gray-400 dark:focus:bg-gray-600 active:text-white dark:active:text-black line-clamp-2">
-                    {{.Date.Unix}} <br />
-                    {{.Title}} 
-                </a>
-            {{ end }}
-        </div>
-    </div>
+    {{ partial "content" . }}
+    
+    <ul class="pt-4 list-disc list-inside">
+        {{ range .Pages }}
+        <li class='flex flex-col items-center mx-16 text-left sm:flex-row'>
+            <a href={{.Permalink}}>
+                <div class='flex flex-row items-center lowercase gap-x-4 sm:text-l lg:text-xl font-title'>
+                    <h3 class="font-semibold">{{.Title}}</h3>
+                    <p class="font-extralight">{{.Description}}</p>
+                </div>
+                <p>{{ .Date.Unix }}</p>
+            </a>
+        </li>
+        {{ end }}
+    </ul>
 
     {{ partial "lyricsbottom" . }}
 </main>

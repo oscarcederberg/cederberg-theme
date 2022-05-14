@@ -13,22 +13,10 @@
 }}
 
 <main class="relative w-screen max-h-full min-h-screen text-center dark:bg-gray-900 dark:text-gray-50">
-    <div class='z-10 flex flex-col items-center mx-16 text-left sm:flex-row'>
-        <div class='flex flex-row items-center mt-6 gap-x-4'>
-            <h1 id="title" class="text-xl font-bold lowercase sm:text-3xl lg:text-5xl font-title"> {{ .Title }} </h1>
-            <h2 id="subtitle" class="text-xl lowercase sm:text-3xl lg:text-5xl font-title font-extralight"> {{ .Params.subtitle }} </h2>
-        </div>
-        
-        <div class="flex flex-row mt-6 text-center justify-evenly w-80"/>
-            {{ partial "navbar" . }}
-        </div>
-    </div>
-    
+    {{ partial "titlebar" . }}
     {{ partial "divider" . }}
     
-    <article id="content" class="mx-16 prose prose-xl text-left prose-slate dark:prose-invert prose-a:text-blue-600 hover:prose-a:text-blue-500">
-        {{ .Content }}
-    </article>
+    {{ partial "content" . }}
 
     {{ partial "lyricsbottom" . }}
 </main>
